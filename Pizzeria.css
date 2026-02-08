@@ -5,10 +5,17 @@
   margin: 0;
 }
 
-.hero {
+.header {
   height: 100vh;
   display: flex;
-  padding-top: 60px;
+  flex-direction: column;
+  align-
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
@@ -62,13 +69,12 @@ body {
 }
 
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 4.5rem;
   padding: 1rem 0;
   z-index: 10;
   background-color: black;
@@ -93,6 +99,12 @@ body {
     font-size: 4rem;
     line-height: 4rem;
   }
+
+.nav {
+  height: 2rem;
+  gap: 1rem;
+}
+
   .subtitle {
     font-size: 1.5rem;
   }
@@ -107,5 +119,9 @@ body {
   .title {
     font-size: 5.5rem;
     line-height: 6rem;
+  }
+  .nav {
+    height: 3.5rem;
+    gap: 2rem;
   }
 }
