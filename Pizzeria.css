@@ -6,7 +6,18 @@
   margin: 0;
 }
 
+:root {
+  --primary-color: #e63946;
+  --secondary-color: #d62828;
+  --text-color: #ddd;
+}
+
 .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-wrapper {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +32,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--text-color);
   font-family: "Lobster", sans-serif;
 
   background:
@@ -31,15 +42,24 @@
   background-repeat: no-repeat;
 }
 
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.hero-action {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
 .btn {
   padding: 2.5px 60px;
-  background: #e63946;
-  border: 1px solid#e63946;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: 120px;
-  color: white;
+  color: var(--text-color);
   cursor: pointer;
   font-weight: bold;
-  margin-top: 0;
   transition: all 0.3s ease-in-out;
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
@@ -48,8 +68,8 @@
 
 .btn:hover {
   background: transparent;
-  color: #d62828;
-  border-color: #d62828;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .title {
@@ -65,6 +85,8 @@
 body {
   line-height: 3rem;
   margin: 0 0 1rem 0;
+  background-color: #1a1a1a;
+  scroll-behavior: smooth;
 }
 
 .nav {
@@ -84,7 +106,7 @@ body {
 }
 
 .nav-items {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -93,13 +115,23 @@ body {
 }
 
 .nav-items:hover {
-  color: #d62828;
+  color: var(--secondary-color);
+}
+
+.heading {
+  margin: 2rem 0 1rem 0;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .about-text {
   line-height: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
 }
-
 @media only screen and (min-width: 600px) {
   .title {
     font-size: 4rem;
@@ -118,6 +150,10 @@ body {
     border-radius: 30;
     font-size: 1.1rem;
   }
+
+  .about-text {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -127,5 +163,15 @@ body {
   }
   .nav {
     height: 3.5rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1200px;
   }
 }
