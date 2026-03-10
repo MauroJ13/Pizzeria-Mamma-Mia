@@ -120,7 +120,8 @@ body {
   line-height: 1.2rem;
 }
 
-.nav-items {
+.nav-items,
+.footer-item {
   color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
@@ -129,7 +130,8 @@ body {
   letter-spacing: 0.1rem;
 }
 
-.nav-items:hover {
+.nav-items:hover,
+.footer-item:hover {
   color: var(--secondary-color);
 }
 
@@ -172,6 +174,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.about-action {
+  display: inline-block;
+  margin-top: 2rem;
 }
 
 .info-wrapper {
@@ -239,14 +246,51 @@ body {
   width: 100%;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  background-color: #303030;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
 @media only screen and (min-width: 600px) {
   .title {
     font-size: 4rem;
     line-height: 4rem;
   }
 
-  .nav {
+  .nav,
+  .footer-links {
     height: 2rem;
+  }
+
+  .footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    gap: 3rem;
+  }
+
+  .footer-links {
+    flex-direction: row;
   }
 
   .subtitle {
@@ -278,8 +322,13 @@ body {
     font-size: 5.5rem;
     line-height: 6rem;
   }
-  .nav {
+  .nav,
+  .footer-links {
     height: 3.5rem;
+  }
+
+  .footer {
+    margin-top: 6rem;
   }
 
   .heading {
