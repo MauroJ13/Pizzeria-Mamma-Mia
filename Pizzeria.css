@@ -36,7 +36,8 @@
   font-family: "Lobster", sans-serif;
 
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("hero.jpg");
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("Bilder/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +53,9 @@
   margin-bottom: 1rem;
 }
 
-.btn {
+.btn,
+.button-inverted {
+  width: fit-content;
   padding: 2.5px 60px;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -64,12 +67,24 @@
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   text-decoration: none;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.button-inverted {
+  background-color: transparent;
+  color: var(--primary-color);
 }
 
 .btn:hover {
   background: transparent;
   color: var(--secondary-color);
   border-color: var(--secondary-color);
+}
+
+.button-inverted:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
 }
 
 .title {
@@ -127,11 +142,103 @@ body {
   border-bottom: 1px solid var(--primary-color);
 }
 
+.about {
+  display: grid;
+  gap: 2rem;
+}
+
 .about-text {
   line-height: 1rem;
   font-size: 0.9rem;
   color: var(--text-color);
 }
+
+.about-images {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+}
+
+.about-image-large {
+  min-width: 50%;
+}
+
+.about-images-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-wrapper {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(Bilder/oeffnungszeiten.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.info .heading {
+  margin: 0 auto;
+}
+
+.hours-entry {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+}
+
+.days {
+  color: var(--text-color);
+  font-family: "inter", sans-serif;
+}
+
+.time {
+  color: white;
+  font-family: "inter", sans-serif;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .heading {
+  margin-top: 0;
+}
+
+.contact-detail {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+.contact-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-image {
+  width: 100%;
+}
+
 @media only screen and (min-width: 600px) {
   .title {
     font-size: 4rem;
@@ -154,6 +261,16 @@ body {
   .about-text {
     font-size: 1rem;
   }
+
+  .contact-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-image {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -168,10 +285,34 @@ body {
   .heading {
     font-size: 2rem;
   }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6rem;
+  }
+
+  .info-wrapper {
+    margin: 8rem 0;
+    padding: 6rem 0;
+  }
+
+  .hours {
+    margin-top: 2rem;
+  }
+
+  .hours-entry {
+    width: 20rem;
+    font-size: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1200px;
+  }
+
+  .hours-entry {
+    font-size: large;
   }
 }
