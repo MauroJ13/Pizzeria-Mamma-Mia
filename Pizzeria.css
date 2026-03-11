@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-color: #e63946;
   --secondary-color: #d62828;
@@ -58,7 +62,7 @@
   width: fit-content;
   padding: 2.5px 60px;
   background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 120px;
   color: var(--text-color);
   cursor: pointer;
@@ -68,12 +72,13 @@
   font-size: 0.9rem;
   text-decoration: none;
   box-sizing: border-box;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .button-inverted {
   background-color: transparent;
   color: var(--primary-color);
+  padding: 0.75rem 060px;
 }
 
 .btn:hover {
