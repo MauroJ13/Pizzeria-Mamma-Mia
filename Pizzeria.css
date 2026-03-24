@@ -4,6 +4,7 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -88,7 +89,7 @@ html {
 }
 
 .button-inverted:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: #fff;
 }
 
