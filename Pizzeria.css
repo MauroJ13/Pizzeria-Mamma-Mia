@@ -116,7 +116,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4.5rem;
-  padding: 1rem 0;
+  padding: 1rem 0rem;
   z-index: 10;
   background-color: black;
   font-family: "inter", sans-serif;
@@ -249,6 +249,7 @@ body {
 
 .contact-image {
   width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .footer {
@@ -275,6 +276,17 @@ body {
 .footer-copyright {
   margin-top: 1rem;
   color: var(--text-color);
+}
+
+@media only screen and (max-width: 500px) {
+  .nav {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-items {
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 600px) {
