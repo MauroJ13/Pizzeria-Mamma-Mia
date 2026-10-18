@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Pizzeria.css" />
+    <meta
+      name="description"
+      content="Pizzeria Mamma Mia – original italienische Küche aus der Toskana."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>"
+    />
     <title>Pizzeria Mamma Mia</title>
   </head>
   <body>
@@ -13,6 +21,7 @@
           <a href="#about" class="nav-items">Über Uns</a>
           <a href="menu.html" class="nav-items">Speise<wbr />karte</a>
           <a href="#info" class="nav-items">Öffnungs<wbr />zeiten</a>
+          <a href="#reservieren" class="nav-items">Reser<wbr />vieren</a>
         </section>
 
         <section class="hero">
@@ -22,6 +31,7 @@
           </h1>
           <p class="subtitle">Original italienische Küche aus Toskana</p>
           <a href="#info" class="hero-action btn">Öffnungszeiten ansehen</a>
+          <a href="#reservieren" class="hero-link">oder direkt einen Tisch reservieren</a>
         </section>
       </div>
 
@@ -62,40 +72,118 @@
           </div>
         </div>
       </section>
+      <section id="spezialitaeten" class="specials container">
+        <h2 class="heading">Unsere Spezialitäten</h2>
+        <div class="specials-grid">
+          <article class="special">
+            <span class="special-tag">Klassiker</span>
+            <h3 class="special-name">Pizza Margherita</h3>
+            <p class="special-text">
+              Tomaten, Fior di Latte und frisches Basilikum – im Steinofen
+              gebacken.
+            </p>
+            <p class="special-price">CHF 12.50</p>
+          </article>
+          <article class="special">
+            <span class="special-tag">Beliebt</span>
+            <h3 class="special-name">Quattro Formaggi</h3>
+            <p class="special-text">
+              Mozzarella, Gorgonzola, Parmigiano und Fontina auf knusprigem
+              Teig.
+            </p>
+            <p class="special-price">CHF 15.00</p>
+          </article>
+          <article class="special">
+            <span class="special-tag">Dessert</span>
+            <h3 class="special-name">Tiramisu della Casa</h3>
+            <p class="special-text">
+              Nach Nonnas Rezept, mit Espresso und Mascarpone – jeden Tag
+              frisch.
+            </p>
+            <p class="special-price">CHF 7.50</p>
+          </article>
+        </div>
+        <a href="menu.html" class="specials-link">Ganze Speisekarte ansehen &rarr;</a>
+      </section>
+
       <section id="info" class="info-wrapper">
         <div class="info container">
           <h2 class="heading">Öffnungszeiten</h2>
+          <p class="open-status" aria-live="polite"></p>
           <div class="hours">
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="1">
               <span class="days">Mo.</span> <span class="time">Ruhetag</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="2">
               <span class="days">Di.</span>
               <span class="time">11.00-23.00</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="3">
               <span class="days">Mi.</span>
               <span class="time">11.00-23.00</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="4">
               <span class="days">Do.</span>
               <span class="time">11.00-22.00</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="5">
               <span class="days">Fr.</span>
               <span class="time">11.00-01.00</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="6">
               <span class="days">Sa.</span>
               <span class="time">11.00-23.00</span>
             </p>
-            <p class="hours-entry">
+            <p class="hours-entry" data-day="0">
               <span class="days">So.</span>
               <span class="time">11.00-21.00</span>
             </p>
           </div>
         </div>
       </section>
+      <section id="reservieren" class="reservation container">
+        <div class="reservation-intro">
+          <h2 class="heading">Tisch reservieren</h2>
+          <p class="reservation-text">
+            Ihr möchtet sicher sein, dass ein Platz für euch frei ist? Füllt
+            das Formular aus – es öffnet sich eine fertige E-Mail an uns. Wir
+            bestätigen eure Reservierung so schnell wie möglich.
+          </p>
+        </div>
+        <form class="reservation-form">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label class="field">
+            <span>Personen</span>
+            <select name="personen">
+              <option>1</option>
+              <option selected>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7+</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Datum</span>
+            <input type="date" name="datum" required />
+          </label>
+          <label class="field">
+            <span>Uhrzeit</span>
+            <input type="time" name="zeit" min="11:00" max="22:30" step="900" value="19:00" required />
+          </label>
+          <label class="field field-wide">
+            <span>Nachricht (optional)</span>
+            <textarea name="nachricht" rows="3" placeholder="z.B. Kinderstuhl, Geburtstag, Allergien …"></textarea>
+          </label>
+          <p class="form-hint" aria-live="polite"></p>
+          <button type="submit" class="btn">Anfrage senden</button>
+        </form>
+      </section>
+
       <section class="contact container">
         <div class="contact-content">
           <img
@@ -106,14 +194,12 @@
           <div class="contact-details">
             <h2 class="heading">Kontakt</h2>
             <p class="contact-detail">(0) 123 4567890</p>
-            <p class="contact-detail">info@beispiel.ch</p>
+            <p class="contact-detail">mauro.jakic@hotmail.com</p>
             <p class="contact-detail">Beispielstr. 1</p>
             <p class="contact-detail">123 Beispielstadt</p>
             <div class="contact-actions">
               <a href="tel:078 237 61 91" class="btn">Jetzt anrufen!</a>
-              <a href="mailto:mauro.jakic@icloud.com" class="button-inverted"
-                >E-Mail schreiben</a
-              >
+              <a href="mailto:mauro.jakic@hotmail.com" class="btn">E-Mail schreiben</a>
             </div>
           </div>
         </div>
@@ -126,7 +212,15 @@
         <a href="#" class="footer-item">Datenschutzerklärung</a>
         <a href="#" class="footer-item">Jobs</a>
       </div>
-      <p class="footer-copyright">&copy; 2026 Testname 123</p>
+      <p class="footer-copyright">&copy; <span class="year">2026</span> Testname 123</p>
     </footer>
+
+    <a href="#" class="to-top" aria-label="Nach oben">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 15 6-6 6 6" />
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
   </body>
 </html>

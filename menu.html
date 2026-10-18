@@ -3,70 +3,175 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizzeria Menu</title>
+    <title>Speisekarte – Pizzeria Mamma Mia</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>"
+    />
     <link href="menu.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="menu">
-      <main>
-        <h1>
-          Pizzeria <br />
-          Mamma Mia
-        </h1>
-        <p class="established">Est. 2026</p>
-        <hr />
-        <section>
-          <h2>Pizza's</h2>
-          <article class="item">
-            <p class="flavor">Pizza Margherita</p>
-            <p class="price">12.50</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Pizza Pesto</p>
-            <p class="price">13.00</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Pizza Napolitana</p>
-            <p class="price">12.50</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Pizza Funghi</p>
-            <p class="price">14.00</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Pizza Quattro Formaggi</p>
-            <p class="price">15.00</p>
-          </article>
-        </section>
-        <section>
-          <h2>Desserts</h2>
-          <article class="item">
-            <p class="dessert">Tiramisu</p>
-            <p class="price">7.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Pannetone</p>
-            <p class="price">10.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cannoli</p>
-            <p class="price">5.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Vanilla Panna Cotta</p>
-            <p class="price">5.00</p>
-          </article>
-        </section>
-      </main>
-      <hr class="bottom-line" />
-      <footer>
-        <p>
-          <a href="index.html" target="_blank" class="visit"
-            >Unsere Webseite!</a
-          >
+    <!-- Kopfbereich -->
+    <header class="menu-hero">
+      <a href="index.html" class="back-link">&larr; Zur Startseite</a>
+      <div class="menu-hero__content">
+        <p class="menu-hero__eyebrow">Est. 2026 · Toskana</p>
+        <h1 class="menu-hero__title">Speisekarte</h1>
+        <p class="menu-hero__text">
+          Alles frisch zubereitet, die Pizzen aus dem Steinofen.
         </p>
-        <p class="address">&copy; 2026 Testname 123</p>
-      </footer>
-    </div>
+      </div>
+    </header>
+
+    <!-- Kategorien -->
+    <nav class="menu-tabs" aria-label="Kategorien">
+      <div class="menu-tabs__inner">
+        <a href="#pizza" class="menu-tab is-active">Pizza</a>
+        <a href="#desserts" class="menu-tab">Desserts</a>
+        <a href="#getraenke" class="menu-tab">Getränke</a>
+        <label class="veg-toggle">
+          <input type="checkbox" id="veg-only" />
+          <span class="veg-toggle__switch"></span>
+          <span>Nur vegetarisch</span>
+        </label>
+      </div>
+    </nav>
+
+    <main class="menu">
+      <!-- Pizza -->
+      <section id="pizza" class="menu-section">
+        <div class="menu-section__head">
+          <h2>Pizza</h2>
+          <p>Ø 32 cm · Steinofen</p>
+        </div>
+        <div class="menu-grid">
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Margherita <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">12.50</span>
+            </div>
+            <p class="dish__desc">Tomaten, Mozzarella, frisches Basilikum</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Pesto <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">13.00</span>
+            </div>
+            <p class="dish__desc">Basilikum-Pesto, Mozzarella, Cherrytomaten</p>
+          </article>
+          <article class="dish">
+            <div class="dish__top">
+              <h3 class="dish__name">Napolitana</h3>
+              <span class="dish__price">12.50</span>
+            </div>
+            <p class="dish__desc">Tomaten, Mozzarella, Sardellen, Kapern, Oliven</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Funghi <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">14.00</span>
+            </div>
+            <p class="dish__desc">Tomaten, Mozzarella, frische Champignons</p>
+          </article>
+          <article class="dish dish--featured" data-veg>
+            <span class="dish__badge">Beliebt</span>
+            <div class="dish__top">
+              <h3 class="dish__name">Quattro Formaggi <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">15.00</span>
+            </div>
+            <p class="dish__desc">Mozzarella, Gorgonzola, Parmesan, Fontina</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Desserts -->
+      <section id="desserts" class="menu-section">
+        <div class="menu-section__head">
+          <h2>Desserts</h2>
+          <p>Hausgemacht</p>
+        </div>
+        <div class="menu-grid">
+          <article class="dish dish--featured" data-veg>
+            <span class="dish__badge">Nonnas Rezept</span>
+            <div class="dish__top">
+              <h3 class="dish__name">Tiramisu <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">7.50</span>
+            </div>
+            <p class="dish__desc">Mascarpone, Espresso, Kakao</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Panettone <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">10.00</span>
+            </div>
+            <p class="dish__desc">Mailänder Hefekuchen mit kandierten Früchten</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Cannoli <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">5.00</span>
+            </div>
+            <p class="dish__desc">Sizilianische Teigrollen mit Ricotta-Füllung</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Panna Cotta <span class="veg" title="vegetarisch">V</span></h3>
+              <span class="dish__price">5.00</span>
+            </div>
+            <p class="dish__desc">Vanille, mit Beerensauce</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Getränke -->
+      <section id="getraenke" class="menu-section">
+        <div class="menu-section__head">
+          <h2>Getränke</h2>
+          <p>Kalt &amp; warm</p>
+        </div>
+        <div class="menu-grid">
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Acqua Panna</h3>
+              <span class="dish__price">4.50</span>
+            </div>
+            <p class="dish__desc">Stilles Wasser · 50 cl</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">San Pellegrino</h3>
+              <span class="dish__price">4.50</span>
+            </div>
+            <p class="dish__desc">Mineralwasser mit Kohlensäure · 50 cl</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Chianti Classico</h3>
+              <span class="dish__price">7.00</span>
+            </div>
+            <p class="dish__desc">Rotwein aus der Toskana · 1 dl</p>
+          </article>
+          <article class="dish" data-veg>
+            <div class="dish__top">
+              <h3 class="dish__name">Espresso</h3>
+              <span class="dish__price">3.80</span>
+            </div>
+            <p class="dish__desc">Aus unserer Siebträgermaschine</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="menu-note">
+        <span class="veg">V</span> vegetarisch · Alle Preise in CHF inkl. MwSt.
+        · Fragt uns gerne nach Allergenen.
+      </p>
+    </main>
+
+    <footer class="menu-footer">
+      <a href="index.html#reservieren" class="btn">Tisch reservieren</a>
+      <p>&copy; 2026 Testname 123</p>
+    </footer>
+
+    <script src="menu.js"></script>
   </body>
 </html>
